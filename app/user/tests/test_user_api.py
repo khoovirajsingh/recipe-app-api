@@ -12,7 +12,7 @@ def create_user(**params):
     return get_user_model().objects.create_user(**params)
 
 class PublicUserApiTests(TestCase):
-    def setUp(self) -> None:
+    def setUp(self):
         self.client = APIClient()
 
     def test_create_user_success(self):
