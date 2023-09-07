@@ -30,7 +30,7 @@ def create_recipe(user, **params):
 
 class PublicRecipeAPITests(TestCase):
     def setUp(self):
-        self.client = APIClient
+        self.client = APIClient()
 
     def test_auth_required(self):
         res = self.client.get(RECIPES_URL)
@@ -40,7 +40,7 @@ class PublicRecipeAPITests(TestCase):
 class PrivateRecipeAPITests(TestCase):
 
     def setUp(self):
-        self.client = APIClient
+        self.client = APIClient()
         self.user = get_user_model().objects.create_user(
             'user@example.com',
             'testpass123'
